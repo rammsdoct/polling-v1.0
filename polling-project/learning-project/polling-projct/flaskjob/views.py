@@ -6,12 +6,6 @@ from flaskjob import app
 @app.route('/home')
 @app.route('/about')
 
-def about():
-    return render_template(
-        "about.html",
-        title = "About polling-1.1",
-        content = "Example-autotest.")
-
 def home():
     now = datetime.now()
     formatted_now = now.strftime("%A, %d %B, %Y at %X")
@@ -21,3 +15,8 @@ def home():
         title = "Hello Flask",
         message = "Hello, Flask!",
         content = " on " + formatted_now)
+def about():
+    return render_template(
+        "about.html",
+        title = "About polling-1.1",
+        content = "Example-autotest.")
