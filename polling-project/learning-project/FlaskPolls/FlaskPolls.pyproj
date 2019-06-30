@@ -1,21 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>7c5c4891-f25b-456f-94e0-b9e19d38d277</ProjectGuid>
+    <ProjectGuid>57b0f774-3412-4286-bd46-bd7aaf098fd4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <StartupFile>runserver.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <LaunchProvider>Web launcher</LaunchProvider>
     <WebBrowserUrl>http://localhost</WebBrowserUrl>
     <OutputPath>.</OutputPath>
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
-    <Name>polling-projct</Name>
-    <RootNamespace>polling-projct</RootNamespace>
+    <Name>FlaskPolls</Name>
+    <RootNamespace>FlaskPolls</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -27,44 +26,56 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="flaskjob\views.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="flaskjob\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="runserver.py" />
+    <Compile Include="FlaskPolls\__init__.py" />
+    <Compile Include="FlaskPolls\settings.py" />
+    <Compile Include="FlaskPolls\views.py" />
+    <Compile Include="FlaskPolls\models\__init__.py" />
+    <Compile Include="FlaskPolls\models\azuretablestorage.py" />
+    <Compile Include="FlaskPolls\models\factory.py" />
+    <Compile Include="FlaskPolls\models\memory.py" />
+    <Compile Include="FlaskPolls\models\mongodb.py" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="flaskjob\several\scripts\_references.js" />
-    <Content Include="flaskjob\several\content\bootstrap.css" />
-    <Content Include="flaskjob\several\content\bootstrap.min.css" />
-    <Content Include="flaskjob\several\content\site.css" />
-    <Content Include="flaskjob\several\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="flaskjob\several\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="flaskjob\several\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="flaskjob\several\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="flaskjob\several\scripts\bootstrap.js" />
-    <Content Include="flaskjob\several\scripts\bootstrap.min.js" />
-    <None Include="flaskjob\several\scripts\jquery.validate-vsdoc.js" />
-    <None Include="flaskjob\several\scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="flaskjob\several\scripts\jquery-1.10.2.js" />
-    <Content Include="flaskjob\several\scripts\jquery-1.10.2.min.js" />
-    <Content Include="flaskjob\several\scripts\jquery-1.10.2.min.map" />
-    <Content Include="flaskjob\several\scripts\jquery.validate.js" />
-    <Content Include="flaskjob\several\scripts\jquery.validate.min.js" />
-    <Content Include="flaskjob\several\scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="flaskjob\several\scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="flaskjob\several\scripts\modernizr-2.6.2.js" />
-    <Content Include="flaskjob\several\scripts\respond.js" />
-    <Content Include="flaskjob\several\scripts\respond.min.js" />
-    <Content Include="flaskjob\several\site.css" />
-    <Content Include="flaskjob\several\data.json" />
-    <Content Include="flaskjob\templates\contact.html" />
-    <Content Include="flaskjob\templates\index.html" />
-    <Content Include="flaskjob\templates\about.html" />
-    <Content Include="flaskjob\templates\layout.html" />
+    <Folder Include="FlaskPolls\" />
+    <Folder Include="FlaskPolls\models\" />
+    <Folder Include="FlaskPolls\static\" />
+    <Folder Include="FlaskPolls\static\content\" />
+    <Folder Include="FlaskPolls\static\fonts\" />
+    <Folder Include="FlaskPolls\static\scripts\" />
+    <Folder Include="FlaskPolls\templates\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="requirements.txt" />
+    <Content Include="FlaskPolls\models\samples.json" />
+    <Content Include="FlaskPolls\static\content\bootstrap.css" />
+    <Content Include="FlaskPolls\static\content\bootstrap.min.css" />
+    <Content Include="FlaskPolls\static\content\site.css" />
+    <Content Include="FlaskPolls\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="FlaskPolls\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FlaskPolls\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="FlaskPolls\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="FlaskPolls\static\scripts\bootstrap.js" />
+    <Content Include="FlaskPolls\static\scripts\bootstrap.min.js" />
+    <Content Include="FlaskPolls\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="FlaskPolls\static\scripts\jquery-1.10.2.js" />
+    <Content Include="FlaskPolls\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="FlaskPolls\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="FlaskPolls\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="FlaskPolls\static\scripts\jquery.validate.js" />
+    <Content Include="FlaskPolls\static\scripts\jquery.validate.min.js" />
+    <Content Include="FlaskPolls\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="FlaskPolls\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="FlaskPolls\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="FlaskPolls\static\scripts\respond.js" />
+    <Content Include="FlaskPolls\static\scripts\respond.min.js" />
+    <Content Include="FlaskPolls\static\scripts\_references.js" />
+    <Content Include="FlaskPolls\templates\about.html" />
+    <Content Include="FlaskPolls\templates\contact.html" />
+    <Content Include="FlaskPolls\templates\details.html" />
+    <Content Include="FlaskPolls\templates\index.html" />
+    <Content Include="FlaskPolls\templates\layout.html" />
+    <Content Include="FlaskPolls\templates\results.html" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
@@ -76,14 +87,6 @@
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>X86</Architecture>
     </Interpreter>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="flaskjob\" />
-    <Folder Include="flaskjob\several\" />
-    <Folder Include="flaskjob\several\content\" />
-    <Folder Include="flaskjob\several\fonts\" />
-    <Folder Include="flaskjob\several\scripts\" />
-    <Folder Include="flaskjob\templates\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 

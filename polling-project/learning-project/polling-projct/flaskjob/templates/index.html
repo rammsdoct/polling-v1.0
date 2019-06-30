@@ -1,10 +1,22 @@
-﻿<html>
-<head>
-    <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="/static/site.css" />
-    <div><a href="about">About</a></div>
-</head>
-<body>
-    <span class="message">{{ message }}</span>{{ content }}
-</body>
-</html>
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Poller1.1</h1>
+    <p class="lead">this is a practice tool polling 1.1, this was made with Flask.</p>
+    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            this tool is for training and survey proposes, not meant to be used for
+            profesional polls or any political/ethical blah.
+        </p>
+    </div>
+</div>
+
+
+{% endblock %}
