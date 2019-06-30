@@ -36,6 +36,10 @@
     <Compile Include="runserver.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="flaskjob\several\site.css" />
+    <Content Include="flaskjob\several\data.json" />
+    <Content Include="flaskjob\templates\index.html" />
+    <Content Include="flaskjob\templates\about.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="flaskjob\" />
+    <Folder Include="flaskjob\several\" />
     <Folder Include="flaskjob\templates\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
