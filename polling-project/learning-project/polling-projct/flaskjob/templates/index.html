@@ -1,10 +1,14 @@
-﻿<html>
-<head>
-    <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="/several/site.css" />
-    <div><a href="about">About</a></div>
-</head>
-<body>
-    <span class="message">{{ message }}</span>{{ content }}
-</body>
-</html>
+﻿#<html>
+#<head>
+#    <title>{{ title }}</title>
+#    <link rel="stylesheet" type="text/css" href="/several/site.css" />
+#    <div><a href="about">About</a></div>
+#</head>
+#<body>
+#    <span class="message">{{ message }}</span>{{ content }}
+#</body>
+#</html>
+{% extends "layout.html" %}
+{% block content %}
+<span class="message">{{ message }}</span>{{ content }}
+{% endblock %}

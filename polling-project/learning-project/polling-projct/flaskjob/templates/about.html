@@ -1,10 +1,14 @@
-﻿<html>
-<head>
-    <title>{{ polling1.1 }}</title>
-    <link rel="stylesheet" type="text/css" href="/several/site.css" />
-</head>
-<body>
-    <div><a href="home">Home</a></div>
-    {{ version 1.1 testing }}
-</body>
-</html>
+﻿#<html>
+#<head>
+#    <title>{{ polling1.1 }}</title>
+#    <link rel="stylesheet" type="text/css" href="/several/site.css" />
+#</head>
+#<body>
+#    <div><a href="home">Home</a></div>
+#    {{ version 1.1 testing }}
+#</body>
+#</html>
+{% extends "layout.html" %}
+{% block content %}
+{{ content }}
+{% endblock %}

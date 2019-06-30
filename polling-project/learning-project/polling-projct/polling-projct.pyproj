@@ -40,6 +40,7 @@
     <Content Include="flaskjob\several\data.json" />
     <Content Include="flaskjob\templates\index.html" />
     <Content Include="flaskjob\templates\about.html" />
+    <Content Include="flaskjob\templates\layout.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
