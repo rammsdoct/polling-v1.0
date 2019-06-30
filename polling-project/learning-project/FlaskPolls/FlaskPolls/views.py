@@ -13,7 +13,7 @@ repository = create_repository(REPOSITORY_NAME, REPOSITORY_SETTINGS)
 @app.route('/')
 @app.route('/home')
 def home():
-    """Renders the home page, with a list of all polls."""
+    """home page, with a list of all polls."""
     return render_template(
         'index.html',
         title='Polls',
@@ -23,7 +23,7 @@ def home():
 
 @app.route('/contact')
 def contact():
-    """Renders the contact page."""
+    """contact page."""
     return render_template(
         'contact.html',
         title='Contact',
@@ -32,7 +32,7 @@ def contact():
 
 @app.route('/about')
 def about():
-    """Renders the about page."""
+    """about page."""
     return render_template(
         'about.html',
         title='About',
@@ -42,13 +42,13 @@ def about():
 
 @app.route('/seed', methods=['POST'])
 def seed():
-    """Seeds the database with sample polls."""
+    """db with the poll result."""
     repository.add_sample_polls()
     return redirect('/')
 
 @app.route('/results/<key>')
 def results(key):
-    """Renders the results page."""
+    """results page."""
     poll = repository.get_poll(key)
     poll.calculate_stats()
     return render_template(
@@ -60,7 +60,7 @@ def results(key):
 
 @app.route('/poll/<key>', methods=['GET', 'POST'])
 def details(key):
-    """Renders the poll details page."""
+    """details page."""
     error_message = ''
     if request.method == 'POST':
         try:
@@ -69,7 +69,6 @@ def details(key):
             return redirect('/results/{0}'.format(key))
         except KeyError:
             error_message = 'Please make a selection.'
-
     return render_template(
         'details.html',
         title='Poll',
@@ -78,7 +77,17 @@ def details(key):
         error_message=error_message,
     )
 
+#@app.route("/poll", methods=['POST'])
+#def next():
+#    """back-return page."""
+#     return render_template(
+#        'return.html',
+#        title='back',
+#    )
+
 @app.errorhandler(PollNotFound)
 def page_not_found(error):
-    """Renders error page."""
+    """error page."""
     return 'Poll does not exist.', 404
+
+

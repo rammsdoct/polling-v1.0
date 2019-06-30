@@ -46,6 +46,7 @@
     <Folder Include="FlaskPolls\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FlaskPolls\templates\return.html" />
     <Content Include="requirements.txt" />
     <Content Include="FlaskPolls\models\samples.json" />
     <Content Include="FlaskPolls\static\content\bootstrap.css" />
