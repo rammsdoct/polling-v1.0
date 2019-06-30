@@ -1,8 +1,6 @@
 """
 Settings for the polls application.
 
-You can set values of REPOSITORY_NAME and REPOSITORY_SETTINGS in
-environment variables, or set the default values in code here.
 """
 
 from os import environ
