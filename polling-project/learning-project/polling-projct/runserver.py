@@ -4,7 +4,7 @@ It contains the definition of routes and views for the application.
 """
 
 import os
-from flask_job import app    # Imports the code from HelloFlask/__init__.py
+from flaskjob import app    # Imports the code from HelloFlask/__init__.py
 
 if __name__ == '__main__':
     HOST = os.environ.get('SERVER_HOST', 'localhost')
